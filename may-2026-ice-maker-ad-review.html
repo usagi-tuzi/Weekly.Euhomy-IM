@@ -283,6 +283,7 @@
     th:first-child, td:first-child { text-align: left; white-space: normal; min-width: 220px; }
     th { background: rgba(0,125,126,.08); color: var(--navy); font: 700 11px/1.2 "JetBrains Mono", monospace; text-transform: uppercase; }
     tr:last-child td { border-bottom: 0; }
+    tfoot td { background: rgba(182,217,76,.13); font-weight: 800; color: var(--navy); }
     td:first-child b { display: block; color: var(--ink); }
     td:first-child span { color: var(--muted); font-size: 12px; }
 
@@ -342,7 +343,7 @@
       .section-head { align-items: start; flex-direction: column; }
       .section-head p { text-align: left; }
       .table-card { overflow-x: auto; }
-      table { min-width: 820px; }
+      table { min-width: 1080px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -393,7 +394,7 @@
     <nav class="nav">
       <a href="#scoreboard">总盘</a>
       <a href="#growth">环比</a>
-      <a href="#portfolio">产品线</a>
+      <a href="#portfolio">广告组合</a>
       <a href="#search">搜索词</a>
       <a href="#asin">ASIN</a>
       <a href="#sov">SOV</a>
@@ -444,22 +445,46 @@
 
     <section id="portfolio">
       <div class="section-head">
-        <h2>产品线分层</h2>
-        <p>产品线应分三类管理：IM-06 负责利润和订单规模，IM013 负责新增量，IM-12S/12SX 负责高客单但必须控制 CPC。</p>
+        <h2>全量广告组合</h2>
+        <p>以下列出 5月所有有广告消耗的制冰机广告组合，共 27 个。表格合计与总盘一致，先看全集，再判断加码、维持、控价或重构。</p>
       </div>
       <div class="table-card">
         <table>
           <thead>
-            <tr><th>Portfolio</th><th>Spend</th><th>Sales</th><th>ACOS</th><th>ROAS</th><th>Orders</th><th>判断</th></tr>
+            <tr><th>广告组合</th><th>产品线/角色</th><th>Spend</th><th>Sales</th><th>ACOS</th><th>ROAS</th><th>Orders</th><th>复盘判断</th></tr>
           </thead>
           <tbody>
-            <tr><td><b>AD-IM-06</b><span>26lb bullet / countertop 主力</span></td><td>$48.5K</td><td>$767.8K</td><td class="good">6.31%</td><td>15.84</td><td>8,464</td><td class="good">优先加预算</td></tr>
-            <tr><td><b>AD-IM013</b><span>nugget 新增长点</span></td><td>$20.7K</td><td>$288.7K</td><td class="good">7.16%</td><td>13.96</td><td>1,819</td><td class="good">扩大词包</td></tr>
-            <tr><td><b>AD-IM-01-X</b><span>便携/台式承接稳定</span></td><td>$24.2K</td><td>$267.7K</td><td>9.04%</td><td>11.06</td><td>3,321</td><td>维持</td></tr>
-            <tr><td><b>AD-IM-12S</b><span>nugget 大盘，CPC 偏高</span></td><td>$53.1K</td><td>$479.1K</td><td class="warn">11.09%</td><td>9.02</td><td>3,039</td><td class="warn">控制顶部位</td></tr>
-            <tr><td><b>AD-IM-12SX</b><span>规模大，转化偏中等</span></td><td>$25.7K</td><td>$222.0K</td><td class="warn">11.59%</td><td>8.63</td><td>1,582</td><td class="warn">重构词包</td></tr>
-            <tr><td><b>AD-IMCS / AD-IMCP</b><span>配件/清洁剂类，不宜与机器同目标</span></td><td>$9.8K</td><td>$49.3K</td><td class="risk">19.86%</td><td>5.05</td><td>1,676</td><td class="risk">单独考核</td></tr>
+            <tr><td><b>AD-IM-12S</b></td><td>Nugget 主力大盘</td><td>$53.1K</td><td>$479.1K</td><td class="warn">11.09%</td><td>9.02</td><td>3,039</td><td class="warn">保留规模，控制高 CPC 位置</td></tr>
+            <tr><td><b>AD-IM-06</b></td><td>Countertop / bullet 主力</td><td>$48.5K</td><td>$767.8K</td><td class="good">6.31%</td><td>15.84</td><td>8,464</td><td class="good">优先加预算</td></tr>
+            <tr><td><b>AD-BRAND-EUHOMY-ICEMAKER</b></td><td>品牌词防守</td><td>$36.8K</td><td>$390.6K</td><td>9.43%</td><td>10.61</td><td>3,363</td><td>单独保留防守预算</td></tr>
+            <tr><td><b>AD-IM-12SX</b></td><td>Nugget / 12SX</td><td>$25.7K</td><td>$222.0K</td><td class="warn">11.59%</td><td>8.63</td><td>1,582</td><td class="warn">重构词包，降低泛词出价</td></tr>
+            <tr><td><b>AD-IM-01-X</b></td><td>便携 / 台式承接</td><td>$24.2K</td><td>$267.7K</td><td>9.04%</td><td>11.06</td><td>3,321</td><td>维持并补充 exact 词</td></tr>
+            <tr><td><b>AD-IM013</b></td><td>Nugget 增长款</td><td>$20.7K</td><td>$288.7K</td><td class="good">7.16%</td><td>13.96</td><td>1,819</td><td class="good">扩大词包与预算上限</td></tr>
+            <tr><td><b>AD-IM-16SX</b></td><td>16SX 产品线</td><td>$20.0K</td><td>$218.4K</td><td>9.15%</td><td>10.92</td><td>1,182</td><td>维持，优先优化转化率</td></tr>
+            <tr><td><b>AD-IM-18S</b></td><td>18S 产品线</td><td>$14.6K</td><td>$124.0K</td><td class="warn">11.81%</td><td>8.46</td><td>1,388</td><td class="warn">控价，保留高转化词</td></tr>
+            <tr><td><b>AD-IM-023</b></td><td>023 产品线</td><td>$10.9K</td><td>$83.1K</td><td class="warn">13.08%</td><td>7.64</td><td>506</td><td class="warn">降低低效流量</td></tr>
+            <tr><td><b>AD-IM046</b></td><td>046 产品线</td><td>$7.8K</td><td>$72.1K</td><td class="warn">10.85%</td><td>9.21</td><td>252</td><td class="warn">控制 CPC，提高转化承接</td></tr>
+            <tr><td><b>AD-IM017-NBL</b></td><td>017-NBL 产品线</td><td>$7.7K</td><td>$91.2K</td><td class="good">8.49%</td><td>11.78</td><td>469</td><td class="good">小幅加预算</td></tr>
+            <tr><td><b>AD-IM-022X2</b></td><td>022X2 产品线</td><td>$6.6K</td><td>$51.8K</td><td class="warn">12.78%</td><td>7.82</td><td>270</td><td class="warn">收紧泛词</td></tr>
+            <tr><td><b>AD-IM-FP</b></td><td>FP 产品线</td><td>$6.1K</td><td>$102.6K</td><td class="good">5.98%</td><td>16.72</td><td>821</td><td class="good">加预算验证上限</td></tr>
+            <tr><td><b>AD-IM-FPX</b></td><td>FPX 产品线</td><td>$6.1K</td><td>$63.6K</td><td>9.60%</td><td>10.41</td><td>450</td><td>维持</td></tr>
+            <tr><td><b>AD-IM-FM</b></td><td>FM 产品线</td><td>$5.8K</td><td>$45.8K</td><td class="warn">12.62%</td><td>7.93</td><td>403</td><td class="warn">降价或拆词</td></tr>
+            <tr><td><b>AD-IMCS</b></td><td>清洁剂 / 配件</td><td>$5.3K</td><td>$28.1K</td><td class="risk">18.75%</td><td>5.33</td><td>1,058</td><td class="risk">单独目标，不与机器同考核</td></tr>
+            <tr><td><b>AD-IMCP</b></td><td>配件</td><td>$4.5K</td><td>$21.3K</td><td class="risk">21.18%</td><td>4.72</td><td>618</td><td class="risk">压预算，按配件目标重设</td></tr>
+            <tr><td><b>AD-IM-15S</b></td><td>15S 产品线</td><td>$3.4K</td><td>$50.6K</td><td class="good">6.77%</td><td>14.77</td><td>341</td><td class="good">小预算放大测试</td></tr>
+            <tr><td><b>AD-IM050</b></td><td>050 产品线</td><td>$3.4K</td><td>$30.2K</td><td class="warn">11.28%</td><td>8.86</td><td>128</td><td class="warn">控 CPC</td></tr>
+            <tr><td><b>AD-IM-01X2</b></td><td>01X2 产品线</td><td>$3.4K</td><td>$30.4K</td><td class="warn">11.21%</td><td>8.92</td><td>419</td><td class="warn">保留转化词，收低效词</td></tr>
+            <tr><td><b>AD-IM-FG</b></td><td>FG 产品线</td><td>$3.1K</td><td>$16.5K</td><td class="risk">18.56%</td><td>5.39</td><td>137</td><td class="risk">暂停低效词包</td></tr>
+            <tr><td><b>AD-IM032</b></td><td>032 产品线</td><td>$3.0K</td><td>$19.5K</td><td class="risk">15.50%</td><td>6.45</td><td>64</td><td class="risk">缩预算，先修转化</td></tr>
+            <tr><td><b>AD-IM047</b></td><td>047 产品线</td><td>$2.6K</td><td>$15.7K</td><td class="risk">16.79%</td><td>5.96</td><td>108</td><td class="risk">降价观察</td></tr>
+            <tr><td><b>AD-IM-02X</b></td><td>02X 产品线</td><td>$2.0K</td><td>$38.9K</td><td class="good">5.02%</td><td>19.90</td><td>158</td><td class="good">小预算加码验证</td></tr>
+            <tr><td><b>AD-IM-12G</b></td><td>12G 产品线</td><td>$0.6K</td><td>$4.0K</td><td class="risk">16.15%</td><td>6.19</td><td>24</td><td class="risk">低预算观察</td></tr>
+            <tr><td><b>AD-IM026</b></td><td>026 产品线</td><td>$0.6K</td><td>$4.2K</td><td class="warn">13.15%</td><td>7.60</td><td>26</td><td class="warn">低预算控价</td></tr>
+            <tr><td><b>AD-IM031</b></td><td>031 产品线</td><td>$0.5K</td><td>$3.1K</td><td class="risk">16.37%</td><td>6.11</td><td>7</td><td class="risk">暂不放量</td></tr>
           </tbody>
+          <tfoot>
+            <tr><td><b>合计</b></td><td>27 个广告组合</td><td>$327.1K</td><td>$3.53M</td><td>9.27%</td><td>10.79</td><td>30,417</td><td>作为本报告总盘口径</td></tr>
+          </tfoot>
         </table>
       </div>
     </section>
