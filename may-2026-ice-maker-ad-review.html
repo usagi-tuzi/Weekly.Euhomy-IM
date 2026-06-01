@@ -266,7 +266,7 @@
 
     .moves {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
     }
     .move-card { padding: 18px; border-top: 5px solid var(--teal); }
@@ -492,7 +492,7 @@
     <section id="search">
       <div class="section-head">
         <h2>搜索词洞察</h2>
-        <p>搜索词复盘分为五个维度：核心大词是否值得继续买、nugget 词根由哪个产品承接、品牌词是否需要防守、配件词是否应单独考核，以及 0 单浪费是否可快速清理。</p>
+        <p>搜索词复盘分为五个维度：核心大词是否值得继续买、nugget 词根由哪个产品承接、品牌词与 ASIN 是否需要防守、配件词是否应单独考核，以及 0 单浪费是否可快速清理。</p>
       </div>
       <div class="split">
         <div class="panel">
@@ -548,34 +548,42 @@
           </ul>
         </div>
       </div>
+      <div class="panel" style="margin-top:14px">
+        <h3>5. 配件词：订单多但客单低，不能按机器 ACOS 管理</h3>
+        <p>ice machine cleaner 花费 $1.1K、销售 $2.8K、ACOS 38.13%；ice maker cleaner 花费 $965、销售 $2.9K、ACOS 33.50%。这类词有订单但销售额低，应该从机器广告目标中拆出，单独设置配件线预算和 ACOS 目标。</p>
+      </div>
     </section>
 
     <section id="asin">
       <div class="section-head">
         <h2>ASIN 承接</h2>
-        <p>预算应优先给同时具备高货架位置、高转化和低 ACOS 的 ASIN。高客单 nugget ASIN 可以保留规模，但不能继续用高 CPC 泛词强推。</p>
+        <p>ASIN 复盘看三个标准：广告效率、货架位置、能否承接对应搜索词。预算应优先给同时具备低 ACOS 和高转化的 ASIN，高客单 nugget ASIN 保留核心位，但不能继续用高 CPC 泛词强推。</p>
       </div>
       <div class="product-grid">
         <article class="product">
           <img src="https://m.media-amazon.com/images/I/41vIMA2ODhL.jpg" alt="B0BWHZJHPL">
           <h3>B0BWHZJHPL · IM-06</h3>
-          <p>SP 花费 $24.8K，销售 $345.6K，ACOS 7.18%。SOV ASIN 排名第 1，Top3 频率 88.18%。</p>
+          <p>SP 花费 $24.8K，销售 $345.6K，ACOS 7.18%。SOV ASIN 排名第 1，Top3 频率 88.18%；适合作为 ice maker / countertop 基础词的主承接款。</p>
         </article>
         <article class="product">
           <img src="https://m.media-amazon.com/images/I/71TR32-yG1L.jpg" alt="B0DCJ78D27">
           <h3>B0DCJ78D27 · IM-01-X</h3>
-          <p>花费 $20.5K，销售 $221.9K，ACOS 9.24%。便携台式词承接稳定。</p>
+          <p>花费 $20.5K，销售 $221.9K，ACOS 9.24%。portable ice maker 词根 ACOS 7.94%，适合承接便携/台式长尾增量。</p>
         </article>
         <article class="product">
           <img src="https://m.media-amazon.com/images/I/81vnNaK0wEL.jpg" alt="B0G4VFK3ZW">
           <h3>B0G4VFK3ZW · IM013</h3>
-          <p>花费 $9.7K，销售 $135.5K，ACOS 7.16%。在 nugget 线中，它比 12S 更适合承接增量预算。</p>
+          <p>花费 $9.7K，销售 $135.5K，ACOS 7.16%。nugget ice maker 词根 ACOS 8.54%，比 12S 更适合承接 nugget 增量预算。</p>
         </article>
         <article class="product">
           <img src="https://m.media-amazon.com/images/I/71ZumpniT1L.jpg" alt="B0C32SGKMJ">
           <h3>B0C32SGKMJ · IM-12S</h3>
-          <p>规模大但 CPC 高，SP ACOS 12.34%；建议保留核心位，减少泛词顶部位硬抢。</p>
+          <p>规模大但 CPC 高，SP ACOS 12.34%；建议保留核心位和品牌相关词，减少 nugget 泛词顶部位硬抢。</p>
         </article>
+      </div>
+      <div class="panel" style="margin-top:14px">
+        <h3>ASIN 预算原则</h3>
+        <p>IM-06 负责基础大词效率，IM013 负责 nugget 增量，IM-01-X 负责 portable/countertop 长尾，IM-12S 负责高客单核心位。6月预算不要按“产品想推什么”分配，而要按“搜索词实际由哪个 ASIN 承接得更好”分配。</p>
       </div>
     </section>
 
@@ -609,16 +617,20 @@
       </div>
       <div class="moves">
         <article class="move-card">
-          <h3>加码</h3>
-          <p>IM-06、IM013、IM-01-X 的 exact 与 ASIN 定向优先增加预算；品牌词和高 ROAS ASIN 单独设置防守预算。</p>
+          <h3>加码高确定性</h3>
+          <p>IM-06、IM013、IM-01-X 的 exact 词和 B07JBJWP2W 等高 ROAS ASIN 定向优先加预算；品牌词单独设置防守预算。</p>
         </article>
         <article class="move-card watch">
-          <h3>重构</h3>
+          <h3>重构 nugget</h3>
           <p>IM-12S/12SX 的 nugget、pebble、sonic 词按 ASIN 拆分；同一个词在不同 ASIN 上使用不同出价和预算上限。</p>
         </article>
         <article class="move-card cut">
-          <h3>控损</h3>
-          <p>清洁剂/配件线单独设 ACOS 目标；B0FPFZTWVZ 等 0 单搜索词先否定或降价，CPC 高于 $2 的词减少顶部位竞争。</p>
+          <h3>清理浪费</h3>
+          <p>ice ball maker、ice makers countertop nugget、round ice maker 等 0 单词进入否词/降价清单；CPC 高于 $2 且转化弱的词减少顶部位竞争。</p>
+        </article>
+        <article class="move-card watch">
+          <h3>拆分配件目标</h3>
+          <p>ice machine cleaner、ice maker cleaner 等配件词从机器投放目标中拆出，单独设预算和 ACOS 目标，避免拉低机器线判断。</p>
         </article>
       </div>
     </section>
