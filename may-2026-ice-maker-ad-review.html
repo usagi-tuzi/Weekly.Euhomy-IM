@@ -20,7 +20,6 @@
       --amber: #d99529;
       --rose: #b43b5b;
       --navy: #0f2f3a;
-      --electric: #7de3ff;
       --shadow: 0 24px 60px rgba(20, 36, 34, .12);
     }
 
@@ -37,49 +36,6 @@
       font-family: "IBM Plex Sans", "Noto Sans SC", sans-serif;
       letter-spacing: 0;
       overflow-x: hidden;
-    }
-
-    body:before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(120deg, transparent 0 42%, rgba(125,227,255,.18) 48%, transparent 54%),
-        repeating-linear-gradient(0deg, rgba(15,47,58,.035) 0 1px, transparent 1px 7px);
-      mix-blend-mode: multiply;
-      opacity: .72;
-      animation: scan-field 10s linear infinite;
-      z-index: 0;
-    }
-
-    .presentation-layer {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      opacity: .58;
-    }
-    .presentation-layer:before,
-    .presentation-layer:after {
-      content: "";
-      position: absolute;
-      inset: 8vh 4vw auto auto;
-      width: min(44vw, 560px);
-      aspect-ratio: 1.6;
-      border: 1px solid rgba(0,125,126,.18);
-      background:
-        linear-gradient(90deg, transparent 0 48%, rgba(0,125,126,.18) 48% 49%, transparent 49%),
-        linear-gradient(0deg, transparent 0 48%, rgba(182,217,76,.16) 48% 49%, transparent 49%);
-      clip-path: polygon(8% 0, 100% 14%, 88% 100%, 0 82%);
-      animation: drift-panel 15s ease-in-out infinite;
-    }
-    .presentation-layer:after {
-      inset: auto auto 10vh 3vw;
-      width: min(32vw, 410px);
-      transform: rotate(180deg);
-      animation-delay: -6s;
-      opacity: .58;
     }
 
     .shell { width: min(1180px, calc(100% - 36px)); margin: 0 auto; position: relative; z-index: 1; }
@@ -103,7 +59,6 @@
         repeating-linear-gradient(90deg, rgba(21,35,32,.08) 0 1px, transparent 1px 15px);
       clip-path: polygon(18% 0, 100% 12%, 80% 100%, 0 82%);
       z-index: -1;
-      animation: rotate-grid 16s ease-in-out infinite;
     }
     .eyebrow {
       display: inline-flex;
@@ -116,9 +71,6 @@
       color: var(--navy);
       font: 700 12px/1 "JetBrains Mono", monospace;
       text-transform: uppercase;
-      transform: translateY(12px);
-      opacity: 0;
-      animation: rise-in .8s cubic-bezier(.2,.9,.2,1) .1s forwards;
     }
     .eyebrow i {
       width: 8px;
@@ -126,8 +78,6 @@
       background: var(--lime);
       border-radius: 50%;
       display: block;
-      box-shadow: 0 0 0 rgba(182,217,76,.55);
-      animation: pulse-dot 1.8s ease-out infinite;
     }
     h1 {
       margin: 22px 0 18px;
@@ -136,28 +86,18 @@
       font-size: clamp(44px, 6.5vw, 88px);
       line-height: .98;
       letter-spacing: 0;
-      transform: translateY(18px);
-      opacity: 0;
-      animation: rise-in .9s cubic-bezier(.2,.9,.2,1) .25s forwards;
     }
     .hero-copy {
       max-width: 720px;
       color: #36443f;
       font-size: 18px;
       line-height: 1.8;
-      transform: translateY(18px);
-      opacity: 0;
-      animation: rise-in .9s cubic-bezier(.2,.9,.2,1) .42s forwards;
     }
-    .mono { font-family: "JetBrains Mono", monospace; font-weight: 700; color: var(--navy); }
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 26px;
-      transform: translateY(18px);
-      opacity: 0;
-      animation: rise-in .9s cubic-bezier(.2,.9,.2,1) .58s forwards;
     }
     .pill {
       border: 1px solid var(--line);
@@ -183,68 +123,6 @@
       border-radius: 8px;
       position: relative;
       overflow: hidden;
-      transform: translateY(22px) rotate(.4deg);
-      opacity: 0;
-      animation: hero-card-in 1s cubic-bezier(.2,.9,.2,1) .4s forwards, product-float 6s ease-in-out 1.5s infinite;
-    }
-    .ice-card:before {
-      content: "";
-      position: absolute;
-      inset: -40% -80% auto auto;
-      width: 90%;
-      height: 180%;
-      background: linear-gradient(90deg, transparent, rgba(125,227,255,.36), transparent);
-      transform: rotate(16deg);
-      animation: product-scan 4.8s ease-in-out infinite;
-    }
-    .signal-stack {
-      position: absolute;
-      left: 22px;
-      top: 22px;
-      display: grid;
-      gap: 6px;
-      width: 116px;
-    }
-    .signal-stack span {
-      display: block;
-      height: 5px;
-      transform-origin: left center;
-      transform: scaleX(.15);
-      background: linear-gradient(90deg, var(--teal), var(--electric), transparent);
-      border-radius: 999px;
-      animation: signal-grow 2.1s ease-in-out infinite;
-    }
-    .signal-stack span:nth-child(2) { width: 78%; animation-delay: .18s; }
-    .signal-stack span:nth-child(3) { width: 58%; animation-delay: .36s; }
-    .signal-stack span:nth-child(4) { width: 92%; animation-delay: .54s; }
-    .hero-metric {
-      position: absolute;
-      right: 24px;
-      bottom: 150px;
-      display: grid;
-      grid-template-columns: auto auto;
-      gap: 8px 12px;
-      align-items: center;
-      padding: 12px 14px;
-      border: 1px solid rgba(0,125,126,.26);
-      background: rgba(255,252,244,.82);
-      backdrop-filter: blur(14px);
-      border-radius: 8px;
-      box-shadow: 0 14px 30px rgba(20,36,34,.1);
-      font-family: "JetBrains Mono", monospace;
-      animation: data-card-float 4.4s ease-in-out infinite;
-    }
-    .hero-metric b { color: var(--teal); font-size: 22px; line-height: 1; }
-    .hero-metric span { color: var(--muted); font-size: 10px; text-transform: uppercase; }
-    .hero-metric:before {
-      content: "";
-      grid-row: 1 / span 2;
-      width: 34px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      border: 6px solid rgba(0,125,126,.16);
-      border-top-color: var(--lime);
-      animation: dial-spin 2.8s linear infinite;
     }
     .verdict {
       background: rgba(255,252,244,.9);
@@ -254,14 +132,6 @@
       backdrop-filter: blur(10px);
       position: relative;
       overflow: hidden;
-    }
-    .verdict:before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 4px;
-      background: linear-gradient(180deg, var(--teal), var(--lime), var(--amber));
-      animation: verdict-beam 3s ease-in-out infinite;
     }
     .verdict b { font-family: "Noto Serif SC", serif; font-size: 26px; display: block; }
     .verdict span { color: var(--muted); line-height: 1.6; }
@@ -314,7 +184,7 @@
       grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 12px;
     }
-    .kpi, .panel, .table-card, .callout, .move-card, .sov-card {
+    .kpi, .panel, .table-card, .move-card, .sov-card {
       background: var(--panel);
       border: 1px solid var(--line);
       box-shadow: 0 16px 38px rgba(20,36,34,.08);
@@ -416,17 +286,6 @@
     td:first-child b { display: block; color: var(--ink); }
     td:first-child span { color: var(--muted); font-size: 12px; }
 
-    .callout {
-      padding: 22px;
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 18px;
-      align-items: center;
-      background: linear-gradient(135deg, rgba(0,125,126,.12), rgba(255,252,244,.94));
-    }
-    .callout h3 { margin: 0 0 8px; font-size: 24px; }
-    .callout p { margin: 0; color: #394944; line-height: 1.7; }
-
     .sov-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 14px; }
     .sov-card { padding: 20px; }
     .sov-card h3 { margin: 0 0 14px; }
@@ -484,9 +343,6 @@
       .section-head p { text-align: left; }
       .table-card { overflow-x: auto; }
       table { min-width: 820px; }
-      .callout { grid-template-columns: 1fr; }
-      .hero-metric { right: 18px; bottom: 142px; }
-      .presentation-layer { display: none; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -504,55 +360,7 @@
       .nav { display: none; }
       .hero { min-height: auto; }
       body { background: #fff; }
-      .kpi, .panel, .table-card, .callout, .move-card, .sov-card, .product { box-shadow: none; }
-    }
-
-    @keyframes scan-field {
-      0% { background-position: -120vw 0, 0 0; }
-      100% { background-position: 120vw 0, 0 54px; }
-    }
-    @keyframes drift-panel {
-      0%, 100% { transform: translate3d(0,0,0) rotate(-2deg); }
-      50% { transform: translate3d(-18px,14px,0) rotate(2deg); }
-    }
-    @keyframes rotate-grid {
-      0%, 100% { transform: rotate(0deg) translateY(0); }
-      50% { transform: rotate(4deg) translateY(8px); }
-    }
-    @keyframes rise-in {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes pulse-dot {
-      0% { box-shadow: 0 0 0 0 rgba(182,217,76,.55); }
-      70% { box-shadow: 0 0 0 12px rgba(182,217,76,0); }
-      100% { box-shadow: 0 0 0 0 rgba(182,217,76,0); }
-    }
-    @keyframes hero-card-in {
-      to { opacity: 1; transform: translateY(0) rotate(0); }
-    }
-    @keyframes product-float {
-      0%, 100% { translate: 0 0; }
-      50% { translate: 0 -8px; }
-    }
-    @keyframes product-scan {
-      0%, 45% { transform: translateX(-90%) rotate(16deg); opacity: 0; }
-      55% { opacity: .9; }
-      100% { transform: translateX(180%) rotate(16deg); opacity: 0; }
-    }
-    @keyframes signal-grow {
-      0%, 100% { transform: scaleX(.18); opacity: .42; }
-      50% { transform: scaleX(1); opacity: 1; }
-    }
-    @keyframes data-card-float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-7px); }
-    }
-    @keyframes dial-spin {
-      to { transform: rotate(360deg); }
-    }
-    @keyframes verdict-beam {
-      0%, 100% { opacity: .36; }
-      50% { opacity: 1; }
+      .kpi, .panel, .table-card, .move-card, .sov-card, .product { box-shadow: none; }
     }
     @keyframes bar-shine {
       0%, 28% { transform: translateX(-110%); }
@@ -561,7 +369,6 @@
   </style>
 </head>
 <body>
-  <div class="presentation-layer" aria-hidden="true"></div>
   <main class="shell">
     <header class="hero">
       <div>
@@ -576,8 +383,6 @@
         </div>
       </div>
       <aside class="ice-card" aria-label="制冰机代表商品">
-        <div class="signal-stack" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-        <div class="hero-metric" aria-hidden="true"><b>10.79</b><span>ROAS</span></div>
         <div class="verdict">
           <b>结论：继续放量，但要换引擎</b>
           <span>预算应从高 CPC 的 12S nugget 泛词，迁移到 IM-06、IM013、可验证 ASIN 定向与品牌词防守。</span>
@@ -764,7 +569,7 @@
   </main>
   <script>
     const animatedItems = document.querySelectorAll(
-      "section, .kpi, .panel, .table-card, .move-card, .sov-card, .product, .callout"
+      "section, .kpi, .panel, .table-card, .move-card, .sov-card, .product"
     );
 
     animatedItems.forEach((item, index) => {
@@ -807,20 +612,6 @@
     }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
 
     animatedItems.forEach((item) => observer.observe(item));
-
-    document.querySelectorAll(".ice-card, .kpi, .product").forEach((card) => {
-      card.addEventListener("pointermove", (event) => {
-        const rect = card.getBoundingClientRect();
-        const x = (event.clientX - rect.left) / rect.width - .5;
-        const y = (event.clientY - rect.top) / rect.height - .5;
-        card.style.setProperty("--tilt-x", `${(-y * 4).toFixed(2)}deg`);
-        card.style.setProperty("--tilt-y", `${(x * 4).toFixed(2)}deg`);
-        card.style.transform = `translateY(-4px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y))`;
-      });
-      card.addEventListener("pointerleave", () => {
-        card.style.transform = "";
-      });
-    });
   </script>
 </body>
 </html>
